@@ -1,0 +1,161 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+h1{
+    font-size: 2.5rem;
+    padding: 20px;
+}
+label, .city{
+    font-size: 1.5rem;
+}
+select, input{
+    border: 1px solid gray;
+    font-size: 1.2rem;
+    padding: 8px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+select{
+    width: 10rem;
+    height: 2.3rem;
+}
+input{
+    width: 20rem;
+    height: 1.5rem;
+}
+option{
+    padding: 10px;
+ 
+    border: none;
+}
+input:focus-visible, select:focus-visible{
+    outline: 1px solid gray;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    margin-top: 2.3rem;
+}
+.weather{
+    transition: ease-in 600ms;
+    width: 18vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    row-gap: 15px;
+    font-size: 1.2rem;
+    color: white;
+}
+.description{
+    font-size: 1.4rem;
+}
+.snow{
+    background-color: #98ABEE;
+    border: none;
+}
+.heavyRain{
+    background-color: #0F0F0F;
+}
+.scatteredClouds{
+    color: black;
+}
+.scatteredClouds > .description{
+    font-size: 1.3rem;
+    color: black;
+}
+.cloud{
+    background-color: #183D3D;
+}
+.sunny{
+    background-color: #F6FDC3;
+}
+.rain{
+    background-color: #070F2B;
+    /* color: white; */
+}
+
+.snowIcon{
+    font-size: 1.8rem;
+    animation: snow 25s linear infinite forwards;
+}
+.rainIcon, .cloudIcon, .scatteredCloudIcon{
+    font-size: 5.5rem;
+    animation: cloud 3500ms linear infinite forwards alternate;
+}
+.heavy{
+    position: relative;
+}
+.cloudContainer{
+    display: flex;
+    gap: 7rem;
+}
+.scatteredCloudIcon{
+    color: rgb(185, 179, 179);
+    font-size: 3rem;
+}
+.lightningIcon{
+    position: absolute;
+    animation: lightning 3500ms linear infinite forwards alternate;
+}
+.sunIcon{
+    color: yellow;
+    filter: drop-shadow(0 0 2em yellow);
+    animation: snow 25s linear infinite forwards;
+}
+@keyframes lightning{
+    0%{
+        transform: translateX(150%);
+        opacity: 0;
+    }
+    33%{
+        opacity: 0.5;
+    }
+    34%{
+        opacity: 0;
+    }
+    50%{
+        transform: translate(-50%);
+        color: rgb(90, 90, 234);
+        opacity: 0.8;
+    }
+    100%{
+        transform: translateX(-300%);
+        opacity: 0;
+    }
+}
+@keyframes snow{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes cloud{
+    0%{
+        transform: translate(60%);
+    }
+    100%{
+        transform: translate(-80%);
+    }
+}
