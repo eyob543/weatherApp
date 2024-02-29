@@ -42,7 +42,11 @@ option{
 input:focus-visible, select:focus-visible{
     outline: 1px solid gray;
 }
-
+.error-message{
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(226, 79, 79);
+}
 .container{
     display: flex;
     justify-content: center;
@@ -59,7 +63,7 @@ input:focus-visible, select:focus-visible{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     padding: 20px;
     border: 1px solid black;
     border-radius: 7px;
@@ -154,9 +158,9 @@ input:focus-visible, select:focus-visible{
 }
 @keyframes cloud{
     0%{
-        transform: translate(60%);
+        transform: translate(40%);
     }
     100%{
-        transform: translate(-80%);
+        transform: translate(-60%);
     }
 }

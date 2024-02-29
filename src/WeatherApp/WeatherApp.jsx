@@ -8,8 +8,8 @@ export default function WeatherApp(){
     const [unit, setUnit] = useState("M");
     const [cityName, setCityName] = useState("");
     const [weatherData, setWeatherData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
- 
+    const [isLoading, setIsLoading] = useState(false); 
+    const [isError, setIsError] = useState(false); 
     useEffect(() => {
         const baseURL = 'https://api.weatherbit.io/v2.0/';
         const apiKey = "7a84c734e01f45888e4cbfd28b29e269";
@@ -22,7 +22,8 @@ export default function WeatherApp(){
                 const weatherData = await response.json();
                 setWeatherData(weatherData.data)
             }catch(error){
-                console.log({error});
+                console.log(error);
+                setIsError(true);
                 setIsLoading(false);
             }finally{
                 setIsLoading(false);
@@ -43,6 +44,9 @@ export default function WeatherApp(){
         const formattedCity = _.map(splitted, _.capitalize);
         _.debounce(setCityName(formattedCity.join(" ")),6500);
     }, [])
+    if(isError){
+        return <p className="error-message">Oops an error occured trying to fecth the weather</p>
+    }
     return(
         <div className="wrapper">
             <nav>
