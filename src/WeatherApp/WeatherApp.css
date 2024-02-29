@@ -27,11 +27,11 @@ select, input{
     border-radius: 5px;
 }
 select{
-    width: 10rem;
+    width: 8rem;
     height: 2.3rem;
 }
 input{
-    width: 20rem;
+    width: 18rem;
     height: 1.5rem;
 }
 option{
@@ -45,24 +45,25 @@ input:focus-visible, select:focus-visible{
 
 .container{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
+    flex-wrap: wrap;
+    gap: 2rem 10rem;
     margin-top: 2.3rem;
+    min-width: none;
 }
 .weather{
+    flex-grow: 1; 
     transition: ease-in 600ms;
-    width: 18vw;
-    height: 60vh;
+    max-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     border: 1px solid black;
-    border-radius: 10px;
-    row-gap: 15px;
+    border-radius: 7px;
+    row-gap: 1rem;
     font-size: 1.2rem;
     color: white;
 }
@@ -84,6 +85,7 @@ input:focus-visible, select:focus-visible{
     color: black;
 }
 .cloud{
+    flex-grow: 1;
     background-color: #183D3D;
 }
 .sunny{
@@ -91,7 +93,6 @@ input:focus-visible, select:focus-visible{
 }
 .rain{
     background-color: #070F2B;
-    /* color: white; */
 }
 
 .snowIcon{
